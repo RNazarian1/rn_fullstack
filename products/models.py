@@ -21,6 +21,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     title = models.CharField(max_length=254)
     authur = models.CharField(max_length=254)
+    genre = models.CharField(max_length=254)
     company = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
@@ -29,4 +30,4 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.title
