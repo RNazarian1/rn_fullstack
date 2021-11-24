@@ -1,0 +1,55 @@
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All PRODUCTS
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?category=books" class="dropdown-item" class="dropdown-item ">Books</a>
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item" class="dropdown-item ">Accessories</a>
+                <a href="{% url 'products' %}?category=books,accessories" class="dropdown-item">All Products</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                BOOKS
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
+                <a href="{% url 'products' %}?category=novel" class="dropdown-item">Novels</a>
+                <a href="{% url 'products' %}?category=autobiography" class="dropdown-item">Autobiography</a>
+                <a href="{% url 'products' %}?category=history_and_geography" class="dropdown-item">History & Geography</a>
+                <a href="{% url 'products' %}?category=sciense_and_philosophy" class="dropdown-item">Science & Philisophy</a>
+                <a href="{% url 'products' %}?category=art" class="dropdown-item">Art</a>
+                <!-- <a href="" class="dropdown-item">By Title</a>
+                <a href="" class="dropdown-item ">By Genre</a>
+                <a href="" class="dropdown-item ">By Authure</a> -->
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ACCESSORIES
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
+                <a href="{% url 'products' %}?category=novel" class="dropdown-item">Book Marks</a>
+                <a href="{% url 'products' %}?category=novel" class="dropdown-item">Reading Lights</a>
+                <a href="{% url 'products' %}?category=novel" class="dropdown-item">Magnifying Glasses</a>
+                <a href="{% url 'products' %}?category=novel" class="dropdown-item">Desk Lamp</a>
+
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SPECIAL OFFERS
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <a href="" class="dropdown-item">New Arrivals</a>
+                <a href="" class="dropdown-item">Deals</a>
+                <a href="" class="dropdown-item">Clearance</a>
+                <a href="" class="dropdown-item">All Specials</a>
+            </div>
+        </li>
+    </ul>
+</div>
