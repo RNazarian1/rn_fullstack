@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import dj_database_url
 
 from pathlib import Path
 
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-h6$1j=f_q#yhl6hq2&h^#13kjv+vhd)_3q-p_o469(*8$e7=$7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rn-fullstack.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -103,16 +104,41 @@ LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = 'rn_fullstack.wsgi.application'
 
 
-# Database
+# Deployment Database Configuration
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
+# Defaults Database Configuration
+# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+"""
+
+#Original Database    
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
+# # Heroku Database Configuration
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://sennoqedqcyrdg:adccc6e125f79b6e6e3547d24909904731e7d3091101278f1667c4db3e0b3d62@ec2-3-95-130-249.compute-1.amazonaws.com:5432/d5k5bf17055gpq')
+# }
+
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

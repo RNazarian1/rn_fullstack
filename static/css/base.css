@@ -29,7 +29,7 @@ body {
 }
 
 .shop-now-button {
-    background: rgb(0, 7, 68);
+    background: rgb(253, 166, 3);
     color: white;
     min-width: 260px;
 }
@@ -63,7 +63,7 @@ body {
 }
 
 .text-black {
-    color: rgb(25, 105, 4) !important;
+    color: rgb(255, 123, 0) !important;
 }
 
 .border-black {
